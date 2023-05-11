@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = "Home Page";
     var isSaved = (((bool)ViewBag.isSaved).ToString().ToLower());
-    var folder = Environment.CurrentDirectory.ToString();
 }
 
 <style>
@@ -278,23 +277,6 @@
 <div class="text-center">
     <h1 class="display-4">Guess the weather for the next day</h1>
 </div>
-
-@*<form method="post" asp-action="SaveWeather" asp-controller="Home">
-        <label for="temperature">Temperature: </label>
-        <input type="text" id="temperature" name="Main.Temp" value="@Model.Main.Temp" />
-
-        <label for="pressure">Pressure: </label>
-        <input type="text" id="pressure" name="Main.Pressure" value="@Model.Main.Pressure" />
-
-        <label for="humidity">Humidity: </label>
-        <input type="text" id="humidity" name="Main.Humidity" value="@Model.Main.Humidity" />
-
-        <label for="wind">Wind: </label>
-        <input type="text" id="wind" name="Wind.Speed" value="@Model.Wind.Speed" />
-
-        <button type="submit" class="location-button"> <i data-feather="map-pin"></i><span>Save changes to disk</span></button>
-
-    </form>*@
 
 @using (Html.BeginForm("SaveWeather", "Home", FormMethod.Post))
 {
