@@ -22,7 +22,7 @@ namespace BLL
         public async Task<WeatherModel> GetWeather()
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("https://api.openweathermap11111111.org/data/2.5/weather?q=sarajevo&units=metric&appid=" + _apiKey);
+            HttpResponseMessage response = await client.GetAsync("https://api.openweathermap.org/data/2.5/weather?q=sarajevo&units=metric&appid=" + _apiKey);
             
             string responseBody = await response.Content.ReadAsStringAsync();
 
